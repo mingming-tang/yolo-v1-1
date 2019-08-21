@@ -46,8 +46,8 @@ class Solver(object):
 
         gpu_options = tf.GPUOptions()
         # config = tf.ConfigProto(gpu_options=gpu_options)
-        config = tf.ConfigProto("grpc://10.24.12.114:8470")
-        self.sess = tf.Session(config=config)
+        # config = tf.ConfigProto("grpc://10.24.12.114:8470")
+        self.sess = tf.Session("grpc://10.24.12.114:8470")
         self.sess.run(tf.global_variables_initializer())
 
         if self.weights_file is not None:
