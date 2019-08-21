@@ -45,9 +45,8 @@ class Solver(object):
             self.net.total_loss, self.optimizer, global_step=self.global_step)
 
         gpu_options = tf.GPUOptions()
-        # config = tf.ConfigProto(gpu_options=gpu_options)
-        # config = tf.ConfigProto("grpc://10.24.12.114:8470")
-        self.sess = tf.Session("grpc://10.24.12.114:8470")
+        config = tf.ConfigProto(gpu_options=gpu_options)
+        self.sess = tf.Session(config=config)
         self.sess.run(tf.global_variables_initializer())
 
         if self.weights_file is not None:
