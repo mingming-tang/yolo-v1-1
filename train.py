@@ -49,9 +49,9 @@ class Solver(object):
         self.sess = tf.Session(config=config)
         self.sess.run(tf.global_variables_initializer())
 
-        if self.weights_file is not None:
-            print('Restoring weights from: ' + self.weights_file)
-            self.saver.restore(self.sess, self.weights_file)
+        # if self.weights_file is not None:
+        #     print('Restoring weights from: ' + self.weights_file)
+        #     self.saver.restore(self.sess, self.weights_file)
 
         self.writer.add_graph(self.sess.graph)
 
